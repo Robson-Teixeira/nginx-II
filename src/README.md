@@ -29,3 +29,15 @@ Para Windows, você pode baixar o Nginx do site oficial: [nginx.org](https://ngi
     - Slow Start é um método que aumenta gradualmente a carga em um servidor para evitar sobrecarga inicial por meio da diretiva `slow_start`. Disponível apenas na versão Plus.
     - Session Persistence é um método que garante que as solicitações de um cliente sejam sempre enviadas para o mesmo servidor, usando a diretiva `sticky`. Disponível apenas na versão Plus. Pode ser configurado com base em cookies, IP ou outros critérios.
     - Limiting connections é um método que limita o número de conexões simultâneas a um servidor usando a diretiva `max_conns` e `queue` para controlar o tráfego. Disponível apenas na versão Plus.
+
+- CGI
+    - CGI (Common Gateway Interface) é um protocolo que permite que servidores web executem scripts e aplicativos externos para gerar conteúdo dinâmico.
+    - O Nginx pode ser configurado para usar CGI por meio do módulo `cgi`, que permite a execução de scripts CGI.
+    - O Nginx pode passar variáveis para o script CGI usando a diretiva `cgi_param`.
+    - O Nginx pode manipular solicitações CGI usando a diretiva `cgi_split_path_info` para separar o caminho do script e os parâmetros da consulta.
+
+- FastCGI
+    - FastCGI é um protocolo de comunicação entre servidores web e aplicativos, permitindo que o Nginx se comunique com servidores de aplicativos como PHP, Python, Ruby, etc.
+    - O Nginx pode ser configurado para usar o FastCGI por meio do módulo `fastcgi_pass`, que especifica o endereço do servidor FastCGI.
+    - O Nginx pode passar variáveis para o servidor FastCGI usando a diretiva `fastcgi_param`.
+    - O Nginx pode manipular solicitações FastCGI usando a diretiva `fastcgi_split_path_info` para separar o caminho do script e os parâmetros da consulta.
