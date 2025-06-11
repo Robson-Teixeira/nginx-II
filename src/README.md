@@ -32,12 +32,17 @@ Para Windows, você pode baixar o Nginx do site oficial: [nginx.org](https://ngi
 
 - CGI
     - CGI (Common Gateway Interface) é um protocolo que permite que servidores web executem scripts e aplicativos externos para gerar conteúdo dinâmico.
+    - O processo CGI é iniciado pelo servidor web quando uma solicitação é feita para um script CGI (geralmente um arquivo executável ou script) e o servidor passa informações sobre a solicitação para o script por meio de variáveis de ambiente.
+    - O script CGI processa a solicitação e gera uma resposta, que é enviada de volta ao servidor web, então, o processo CGI é finalizado.
     - O Nginx pode ser configurado para usar CGI por meio do módulo `cgi`, que permite a execução de scripts CGI.
     - O Nginx pode passar variáveis para o script CGI usando a diretiva `cgi_param`.
     - O Nginx pode manipular solicitações CGI usando a diretiva `cgi_split_path_info` para separar o caminho do script e os parâmetros da consulta.
 
 - FastCGI
     - FastCGI é um protocolo de comunicação entre servidores web e aplicativos, permitindo que o Nginx se comunique com servidores de aplicativos como PHP, Python, Ruby, etc.
+    - O processo FastCGI é iniciado pelo servidor web quando uma solicitação é feita para um script FastCGI (geralmente um arquivo executável ou script) e o servidor passa informações sobre a solicitação para o processo FastCGI por meio de variáveis de ambiente.
+    - O processo FastCGI pode ser executado em um servidor separado ou no mesmo servidor do Nginx, permitindo que o Nginx se comunique com o processo FastCGI por meio de um socket Unix ou uma conexão TCP.
+    - O processo FastCGI pode lidar com várias solicitações simultaneamente, o que melhora o desempenho em comparação com o CGI tradicional, que cria um novo processo para cada solicitação. Sendo assim, uma vez iniciado o processo FastCGI, ele permanece em execução e pode atender a várias solicitações, reduzindo a sobrecarga de criação de processos.
     - O Nginx pode ser configurado para usar o FastCGI por meio do módulo `fastcgi_pass`, que especifica o endereço do servidor FastCGI.
     - O Nginx pode passar variáveis para o servidor FastCGI usando a diretiva `fastcgi_param`.
     - O Nginx pode manipular solicitações FastCGI usando a diretiva `fastcgi_split_path_info` para separar o caminho do script e os parâmetros da consulta.
