@@ -58,3 +58,5 @@ Para Windows, você pode baixar o Nginx do site oficial: [nginx.org](https://ngi
     - Instala o certificado SSL no MacOS.
 - `certutil.exe -user -store root localhost.crt`
     - Instala o certificado SSL no Windows.
+
+> [Managing security certificates from the console - on Windows, Mac OS X and Linux](https://sadique.io/blog/2012/06/05/managing-security-certificates-from-the-console-on-windows-mac-os-x-and-linux/)
