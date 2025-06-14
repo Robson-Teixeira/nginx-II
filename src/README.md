@@ -48,3 +48,13 @@ Para Windows, você pode baixar o Nginx do site oficial: [nginx.org](https://ngi
     - O Nginx pode manipular solicitações FastCGI usando a diretiva `fastcgi_split_path_info` para separar o caminho do script e os parâmetros da consulta.
 
 > Let's Encrypt é uma autoridade certificadora gratuita que fornece certificados SSL/TLS para sites. O Nginx pode ser configurado para usar certificados Let's Encrypt para habilitar HTTPS em sites, garantindo conexões seguras entre o servidor e os clientes. A configuração geralmente envolve a instalação do Certbot, que automatiza o processo de obtenção e renovação de certificados Let's Encrypt, e a configuração do Nginx para usar esses certificados.
+
+## Comandos
+- `openssl req -x509 -nodes -days 30 -newkey rsa:2048 -keyout C:/Server/nginx/localhost.key -out C:/Server/nginx/localhost.crt`
+    - Gera um certificado SSL autoassinado válido por 30 dias.
+- `certutil -A -d sql:~/.pki/nssdb -t C -n "Certificate Common Name" -i localhost.crt`
+    - Instala o certificado SSL no Linux.
+- `security add-certificate localhost.crt` e `security add-trusted-cert localhost.crt`
+    - Instala o certificado SSL no MacOS.
+- `certutil.exe -user -store root localhost.crt`
+    - Instala o certificado SSL no Windows.
